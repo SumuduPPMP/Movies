@@ -1,0 +1,6 @@
+.custom{
+  position: sticky;
+  z-index: 0;
+  border-radius: 10px;
+  background-color: #4a4848;
+}

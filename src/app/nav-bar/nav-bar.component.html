@@ -1,0 +1,42 @@
+<div class="mb-3 bg-white sub-nav">
+  <div class="top-curve"></div>
+</div>
+<div
+  class="d-flex flex-column flex-md-row align-items-center p-4 px-md-4 bg-white main-nav"
+>
+  <h4
+    class="my-0 mr-md-auto font-weight-normal text-muted"
+    routerLinkActive="active"
+    routerLink="/"
+  >
+   <strong>Dream Viewer</strong>
+  </h4>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a *ngIf="loggedin()" class="p-2 text-dark" routerLinkActive="active" routerLink="/add-movie"
+      >Add a movie</a
+    >
+    <a *ngIf="!loggedin()" class="p-2 text-dark" routerLinkActive="active" routerLink="/register"
+      >Rgister</a
+    >
+    <a *ngIf="!loggedin()" class="p-2 text-dark" routerLinkActive="active" routerLink="/login"
+      >Login</a
+    >
+
+    <div *ngIf = "loggedin()" class="btn-group" dropdown>
+      <a id="button-basic" dropdownToggle class="p-2 text-dark dropdown-toggle"
+              aria-controls="dropdown-basic">
+              Welcome {{loggedinUser}} <span class="caret"></span>
+    </a>
+      <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+          role="menu" aria-labelledby="button-basic">
+        <li role="menuitem"><a class="dropdown-item" (click) ="onLogout()"><i class="fas fa-sign-out-alt mr-2"></i>logout</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+        <li class="divider dropdown-divider"></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+</div>
+

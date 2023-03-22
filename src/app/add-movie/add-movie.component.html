@@ -1,0 +1,50 @@
+<div class="card">
+  <div class="card-header">
+    Add new Movie
+  </div>
+  <div class="card-body">
+    <form [formGroup] = "addMovieForm" (ngSubmit)="onSubmit()">
+      <div>
+            <div class="form-group col-12">
+              <label for ="name">Name</label>
+              <input type="text" class="form-control form-control-lg"
+                formControlName ="Name"
+               [(ngModel)]="movies.Name"
+               required>
+            </div>
+            <div class="form-group col-12">
+              <label for ="year">Year</label>
+              <input type="text" class="form-control form-control-lg"
+                formControlName ="Year"
+               [(ngModel)]="movies.Year"
+
+                required>
+            </div>
+
+            <div class="form-group col-12">
+              <label for="exampleFormControlTextarea1">Discription</label>
+              <textarea class="form-control form-control-lg" id="exampleFormControlTextarea1" rows="3"
+              ></textarea>
+            </div>
+
+            <div class="form-group col-12">
+              <select class="form-control form-control-lg border">
+                <option selected>Choose...</option>
+                <option *ngFor="let city of cityList" value={{city.id}}>{{city.name}}</option>
+              </select>
+            </div>
+
+            <div class="form-group col-12">
+              <label for="exampleFormControlFile1">Movie image</label>
+              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+
+            <div class="form-group col-12">
+              <button type="submit" class="btn btn-primary mr-2" >Next</button>
+            </div>
+      </div>
+
+    </form>
+
+  </div>
+</div>

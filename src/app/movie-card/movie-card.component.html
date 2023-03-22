@@ -1,0 +1,10 @@
+<div class="custom-card" routerLink ="/movie-details/{{movie.Id}}">
+  <div class="image-container">
+    <img *ngIf ="movie.Image" class="img-style" src="assets/images/{{movie.Image}}.jpg" />
+    <img *ngIf ="!movie.Image" class="img-style" src="assets/images/movie-5.jpg" />
+  </div>
+  <div class="pt-2 pr-2 pl-2">
+    <h6>{{ movie.Name }}</h6>
+    <h6 class="text-muted">{{ movie.Year }}</h6>
+  </div>
+</div>

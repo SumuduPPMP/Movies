@@ -1,0 +1,35 @@
+<div class="row pt-4 pb-4 mb-4 custom">
+  <div class="col-md-9">
+    <div class="input-group">
+      <input [(ngModel)]='name' type="text" class="form-control form-control-lg border" placeholder="Movie name.." />
+      <div class="input-group-append">
+        <button class="btn btn-light" (click) ="onNameFilter()" >Search</button>
+        <button class="btn btn-light" (click) ="onClearFilter()" >Clear</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3" style="padding-left: -35px;">
+    <div class="input-group">
+      <select [(ngModel)] ='SortByParam' class="form-control form-control-lg border">
+        <option selected>Choose...</option>
+        <option value="Year">Year</option>
+        <option value="Name">Name</option>
+      </select>
+      <div class="input-group-append">
+        <button class="btn btn-light" (click) ="onSortDirection()" >
+          <i *ngIf = "SortDirection === 'asc'" class = "fas fa-sort-alpha-down"></i>
+          <i *ngIf = "SortDirection === 'desc'" class = "fas fa-sort-alpha-up"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+  <div *ngFor = "let movie of movies|filter:serachName : 'Name'|sort:[SortByParam,SortDirection]" class="p-2">
+    <movie-card [movie] ="movie"></movie-card>
+  </div>
+
+</div>
+

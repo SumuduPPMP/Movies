@@ -1,0 +1,13 @@
+
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-img-wrapper">
+       <img *ngIf ="movie.Image" class="img-style" src="assets/images/{{movie.Image}}.jpg" />
+    <img *ngIf ="!movie.Image" class="img-style" src="assets/images/movie-5.jpg" />
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-8"></div>
+  <h3>{{movie.Name}}</h3>
+</div>
